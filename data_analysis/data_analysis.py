@@ -9,7 +9,7 @@ import requests
 
 
 def generate_url(location):
-    url = f'http://berkeleyearth.lbl.gov/auto/Regional/TAVG/Text/{location.lower()}-TAVG-Trend.txt'
+    url = 'http://berkeleyearth.lbl.gov/auto/Regional/TAVG/Text/{location.lower()}-TAVG-Trend.txt'
     return url
 
 
