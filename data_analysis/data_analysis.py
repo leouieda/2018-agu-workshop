@@ -9,7 +9,7 @@ import requests
 
 
 def generate_url(location):
-    url = 'http://berkeleyearth.lbl.gov/auto/Regional/TAVG/Text/{location.lower()}-TAVG-Trend.txt'
+    url = f'http://berkeleyearth.lbl.gov/auto/Regional/TAVG/Text/{location.lower()}-TAVG-Trend.txt'
     return url
 
 
@@ -37,7 +37,7 @@ def moving_average(data, width):
     """
     moving_avg = np.full(data.size, np.nan)
     for i in range(width, moving_avg.size - width):
-        moving_avg[i] = np.mean(data[i - width:i + width]) 
+        moving_avg[i] = np.mean(data[i:i + width])
     return moving_avg
 
 
