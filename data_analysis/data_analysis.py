@@ -14,6 +14,10 @@ def generate_url(location):
 
 
 def download_data(location):
+    """
+    Download data for the given
+    location.
+    """
     url = generate_url(location)
     # Download the content of the URL
     response = requests.get(url)
@@ -36,12 +40,6 @@ def moving_average(data, width):
         moving_avg[i] = np.mean(data[i - width:i + width]) 
     return moving_avg
 
-
-def test_moving_avg():
-    avg = moving_average(np.ones(1000), 2)
-    assert np.all(np.isnan(avg[0:2]))
-    assert np.all(np.isnan(avg[-2:]))
-    assert np.allclose(avg[2:-2], 1)
 
 
 
